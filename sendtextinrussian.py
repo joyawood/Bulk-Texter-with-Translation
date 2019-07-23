@@ -21,8 +21,9 @@ print(u'Translation: {}'.format(translation['translatedText']))
 newText = format(translation['translatedText'])
 
 
-account_sid = TWILIO_ACCOUNT_SID
-auth_token = TWILIO_AUTH_TOKEN
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+auth_token = os.environ['TWILIO_AUTH_TOKEN']
+
 client = Client(account_sid, auth_token)
 
 message = client.messages \
